@@ -1,0 +1,6 @@
+{
+    "mongodb_connection_string" : "mongodb+srv://sridhardcse:sridhar@cluster0.59wpv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "mongodb_database" : "community",
+    "home" : "This is a Home Page"
+
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "_head.html" %}
+
+<body class="g-sidenav-show  bg-gray-100">
+    {# {% include "_sidenav.html" %} #}
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        {% include "_topnav.html" %}
+        <div class="container-fluid py-2">
+            {% block content %} {% endblock %}
+            {# {% include "_footer.html" %} #}
+        </div>
+    </main>
+    {% include "_configurator.html" %}
+    {% include "_dummy_modal.html" %}
+    {% include "_corejs.html" %}
+</body>
+
+</html>

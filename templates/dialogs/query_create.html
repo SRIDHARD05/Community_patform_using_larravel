@@ -1,0 +1,37 @@
+<div class="modal fade" id="new-query-modal" tabindex="-1" role="dialog" aria-labelledby="new-query-modalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="question-title">Question?</label>
+                        <input type="text" class="form-control" id="question-title" placeholder="New Question?" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <button class="btn bg-gradient-success dropdown-toggle " type="button"
+                                data-id="create-questions-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Groups
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="create-questions-dropdown">
+                                {% for group in groups %}
+                                <li><a class="dropdown-item new-question-items" id="{{ group['id'] }}" href="#">{{ group['name'] }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="query-descriptions">Descriptions</label>
+                        <textarea class="form-control" type="textarea" id="query-descriptions" rows="2" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="new-query-modal-cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="new-query-modal-submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

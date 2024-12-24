@@ -1,0 +1,35 @@
+{% extends '__master.html' %}
+
+{% block content %}
+
+<div class="container">
+  {% for i in range(0, groups|length, 4) %}
+  <div class="row mb-4">
+    {% for group in groups[i:i+4] %}
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div class="card">
+        <div class="card-header p-2 ps-3">
+          <div class="d-flex justify-content-between">
+            <div>
+              <h6 class="mb-0"><a class="text-sm mb-0 text-capitalize group-uuid" data-id="group-{{ group.id }}">
+                  {{ group.name }}
+                </a></h6>
+            </div>
+          </div>
+        </div>
+        <hr class="dark horizontal my-0">
+        <div class="card-footer p-2 ps-3">
+          <p class="mb-0 text-sm">
+            <span class="text-success font-weight-bolder">
+              {{ group.description }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
