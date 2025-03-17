@@ -24,4 +24,4 @@ db = Database.get_connection()
 # Group.register_group("Group8","This is a Sample Group 8")
 
 
-Queries.register_queries()
+# Queries.register_queries()
