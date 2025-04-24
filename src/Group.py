@@ -30,8 +30,7 @@ class Group:
             "description": description,
             "active": True,
         })
-        
-        return Group(uuid)
+        return result['id']
     
     @staticmethod
     def get_groups():

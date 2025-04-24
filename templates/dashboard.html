@@ -3,33 +3,49 @@
 {% block content %}
 
 <div class="container">
-  {% for i in range(0, groups|length, 4) %}
-  <div class="row mb-4">
-    {% for group in groups[i:i+4] %}
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-header p-2 ps-3">
-          <div class="d-flex justify-content-between">
-            <div>
-              <h6 class="mb-0"><a class="text-sm mb-0 text-capitalize group-uuid" data-id="group-{{ group.id }}">
-                  {{ group.name }}
-                </a></h6>
+  {% if groups and groups|length > 0 %}
+    {% for i in range(0, groups|length, 4) %}
+      <div class="row mb-4">
+        {% for group in groups[i:i+4] %}
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-header p-2 ps-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h6 class="mb-0">
+                    <a class="text-sm mb-0 text-capitalize group-uuid" data-id="group-{{ group.id }}">
+                      {{ group.name }}
+                    </a>
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <hr class="dark horizontal my-0">
+            <div class="card-footer p-2 ps-3">
+              <p class="mb-0 text-sm">
+                <span class="text-success font-weight-bolder">
+                  {{ group.description }}
+                </span>
+              </p>
             </div>
           </div>
         </div>
-        <hr class="dark horizontal my-0">
-        <div class="card-footer p-2 ps-3">
-          <p class="mb-0 text-sm">
-            <span class="text-success font-weight-bolder">
-              {{ group.description }}
-            </span>
-          </p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  {% else %}
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title mb-3">No Groups Available</h5>
+          <p class="card-text text-muted mb-3">You haven't created any groups yet.</p>
+          <button type="button" id="create-group" class="btn btn-primary">Create Group</button>
         </div>
       </div>
     </div>
-    {% endfor %}
-  </div>
-  {% endfor %}
+  </div>  
+  {% endif %}
 </div>
 
 {% endblock %}

@@ -21,14 +21,19 @@
         <div class="col-md-12">
             <h4 style="font-size: 1.5rem; color: #495057;">Community Solutions:</h4>
             {% if solutions %}
-            {% for solution in solutions %}
-            <div class="card" style="margin-bottom: 10px; border: 1px solid #ced4da;">
-                <div class="card-body" style="padding: 15px;">
-                    <p style="margin: 0; color: #495057;">{{ solution }}</p>
-                </div>
-            </div>
-            {% endfor %}
+            <ol style="padding-left: 20px;">
+                {% for solution in solutions %}
+                <li style="margin-bottom: 10px; list-style-position: inside;">
+                    <div class="card" style="border: 1px solid #ced4da;">
+                        <div class="card-body" style="padding: 15px;">
+                            <p style="margin: 0; color: #495057;">{{ solution.answer }} - {{ solution.user_id}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ol>
             {% else %}
+
             <div class="alert alert-info"
                 style="margin-top: 10px; padding: 15px; border: 1px solid #ced4da; background-color: #f8f9fa; color: #495057;">
                 <p style="margin: 0;">No solutions available yet. Be the first to submit an answer!</p>
